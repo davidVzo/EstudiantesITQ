@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EstudiantesITQ.EliminarEstudiantes">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Eliminar Estudiante" FontSize="Large" HeightRequest="50"
+                   FontAttributes="Bold"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <Label Text="Ingrese Código de Estudiante" />
+            
+            <Entry x:Name="txtcodigo" ></Entry>
+            <Button x:Name="btnEliminarEstudiante" Clicked="btnEliminarEstudiante_Clicked" Text="Eliminar"    />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

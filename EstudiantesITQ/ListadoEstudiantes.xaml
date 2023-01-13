@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EstudiantesITQ.ListadoEstudiantes"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="0">
+            <Label Margin="0,0,0,20" FontSize="Large" Text="LISTADO DE USUARIOS" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+
+            <Frame BackgroundColor="#D6F5B5" BorderColor="DarkSlateGray" HeightRequest="60" Padding="0">
+                <Grid Padding="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2.5*"/>
+                        <ColumnDefinition Width="2.5*"/>
+                        <ColumnDefinition Width="2.5*"/>
+                        <ColumnDefinition Width="2.5*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Margin="5,0,5,0" Text="Id" VerticalOptions="Center"  Grid.Column="0" />
+                    <Label Margin="5,0,5,0" Text="Nombre" VerticalOptions="Center"  Grid.Column="1" />
+                    <Label Margin="5,0,5,0" Text="Apellido" VerticalOptions="Center"  Grid.Column="2" />
+                    <Label Margin="5,0,5,0" Text="Correo" VerticalOptions="Center"  Grid.Column="3" />
+                    <Label Margin="5,0,5,0" Text="Teléfono" VerticalOptions="Center"  Grid.Column="4" />
+
+                    <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="0" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand" />
+                    <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="1" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand" />
+                    <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand" />
+                    <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="3" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand" />
+                </Grid>
+            </Frame>
+
+
+            <ListView x:Name="lstEstudiantes" SelectionMode="Single" ItemSelected="lstEstudiantes_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                                <Grid Padding="0" RowSpacing="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="2.5*"/>
+                                        <ColumnDefinition Width="2.5*"/>
+                                        <ColumnDefinition Width="2.5*"/>
+                                    <ColumnDefinition Width="2.5*"/>
+                                </Grid.ColumnDefinitions>
+
+                                    <Label Margin="10,0,10,0" Text="{Binding codigo}" VerticalOptions="Center"  Grid.Column="0"  />
+                                    <Label Margin="10,0,10,0" Text="{Binding nombre}" VerticalOptions="Center"  Grid.Column="1" />
+                                    <Label Margin="10,0,10,0" Text="{Binding apellido}" VerticalOptions="Center"  Grid.Column="2" />
+                                    <Label Margin="10,0,10,0" Text="{Binding correo}" VerticalOptions="Center"  Grid.Column="3" FontSize="12" />
+                                   <Label Margin="10,0,10,0" Text="{Binding telefono}" VerticalOptions="Center"  Grid.Column="4" FontSize="12" />
+                            </Grid>
+                            
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button Text="Insertar" x:Name="btnInsertar" Clicked="btnInsertar_Clicked" />
+            <Button Text="Eliminar" x:Name="btnEliminar" Clicked="btnEliminar_Clicked"  />
+            <Button Text="Eliminar Datos" x:Name="btnEliminarID" Clicked="btnEliminarID_Clicked" TextColor="White" BackgroundColor="Red"/>
+            <Button Text="Editar" x:Name="btnEditar" Clicked="btnEditar_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage> 
